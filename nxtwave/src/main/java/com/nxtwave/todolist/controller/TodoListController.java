@@ -16,21 +16,21 @@ public class TodoListController {
 	private TodoListService service;
 
 	// Endpoint to create a new todo list
-	@PostMapping("/create")
+	@PostMapping("/todos")
 	public TodoList createTodoList(@RequestBody TodoList list) {
 		return service.createTodoList(list);
 
 	}
 
 	// Endpoint to get all todo lists
-	@GetMapping("/getAllLists")
+	@GetMapping("/todos")
 	public List<TodoList> getAllLists() {
 		return service.getAllLists();
 
 	}
 
 	// Endpoint to get a todo list by ID
-	@GetMapping("/getTodo/{id}")
+	@GetMapping("/todos/{id}")
 	public TodoList getTodoById(@PathVariable int id) {
 
 		return service.getTodoById(id);
@@ -38,14 +38,14 @@ public class TodoListController {
 	}
 
 	// Endpoint to update a todo list by ID
-	@PutMapping("/updateList/{id}")
+	@PutMapping("/todos/{id}")
 	public TodoList updateList(@PathVariable int id, @RequestBody TodoList list) {
 		return service.updateList(id, list);
 
 	}
 
 	// Endpoint to delete a todo list by ID
-	@DeleteMapping("/deleteList/{id}")
+	@DeleteMapping("/todos/{id}")
 	public String deleteList(@PathVariable int id) {
 	
 		return service.deleteList(id);
